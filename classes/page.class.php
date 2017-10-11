@@ -3,7 +3,6 @@
 abstract class page
 {
 	protected $html;
-
 	public function __construct()
 	{
 		$this->html .= '<html>';
@@ -13,8 +12,7 @@ abstract class page
 	public function __destruct()
     {
         $this->html .= '</body></html>';
-        echo $this->html;
-        //stringFunctions::printThis($this->html); need to move this into class
+        stringFunction::print_this($this->html);
     }
 }
 ?>
