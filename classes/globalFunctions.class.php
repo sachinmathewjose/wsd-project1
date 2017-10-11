@@ -1,5 +1,5 @@
 <?php 
-class globalFunction
+class globalFunctions
 {
 	static public function get_from_GET($string)
 	{

@@ -24,7 +24,7 @@ class main
 	{
 		// requested page will initilally be homepage
 		$requested_page = 'homePage';
-		if ($var = globalFunctions::get_from_REQUEST('page')) != 0)
+		if ($var = globalFunctions::get_from_REQUEST('page'))
 		{
 			$requested_page = $var;
 		}

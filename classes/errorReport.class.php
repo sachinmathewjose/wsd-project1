@@ -10,9 +10,9 @@ class errorReport extends page
     {
     	$errorMsg = '';
     	$msg = '';
-    	if (isset($_GET['errorMsg']))
+		if ($var = globalFunctions::get_from_REQUEST('errorMsg'))
 		{
-			$msg = $_GET['errorMsg'];
+			$msg = $var;
 		}
     	$errorMsg .= "<h4>$msg</h4>";
     	$errorMsg .= '<form action="index.php" method="get">';
