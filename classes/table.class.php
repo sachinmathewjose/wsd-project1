@@ -10,11 +10,24 @@ class table extends page
 		}
     }
 
+    public function displayWaring($filename)
+    {
+    	$this->html .= '<div class="alert">';
+		$this->html .= '<span class="closebtn" onclick="this.parentElement.style.display=\'none\';">&times;</span>';
+		$this->html .= "file \'<strong>$filename</strong>\' already existed in the filesystem. replaced the existing file.";       
+		$this->html .= '</div>';
+    }
+
     public function readcsv($filename)
     {
+    	if(globalFunctions::get_from_get('existed'))
+    	{
+    		$this->displayWaring($filename);
+    	}
 		$handle = fopen($filename, "r");
-		$this->html .= '<table>';
+		$this->html .= '<table id="table1">';
 		//Display heading
+		$this->html .= "<caption>$filename</caption>";
     	$csvContents = fgetcsv($handle);
     	$this->html .= '<tr>';
     	foreach ($csvContents as $headercolumn)

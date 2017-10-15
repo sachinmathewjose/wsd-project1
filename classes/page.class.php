@@ -6,7 +6,10 @@ abstract class page
 	public function __construct()
 	{
 		$this->html .= '<html>';
-        $this->html .= '<link rel="stylesheet" href="styles\\styles.css">';
+		$this->html .= '<head>';
+		$this->html .= '<title>My Project 1</title>';
+        $this->html .= '<link rel="stylesheet" type="text/css" href="styles/style.css">';
+        $this->html .= '</head>';
         $this->html .= '<body>';
 	}
 	public function __destruct()

@@ -25,16 +25,9 @@ class globalFunctions
 		}
 	}
 
-	static public function get_from_POST($string)
+	static public function get_filename_from_path($path)
 	{
-		if (isset($_POST[$string]))
-		{
-			return $_POST[$string];
-		}
-		else
-		{
-			return 0;
-		}
+		return basename($path);
 	}
 }
 
