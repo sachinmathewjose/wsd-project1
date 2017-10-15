@@ -14,7 +14,7 @@ class table extends page
     {
     	$this->html .= '<div class="alert">';
 		$this->html .= '<span class="closebtn" onclick="this.parentElement.style.display=\'none\';">&times;</span>';
-		$this->html .= "file \'<strong>$filename</strong>\' already existed in the filesystem. replaced the existing file.";       
+		$this->html .= "file '<strong>$filename</strong>' already existed in the filesystem. replaced the existing file.";       
 		$this->html .= '</div>';
     }
 
@@ -22,12 +22,12 @@ class table extends page
     {
     	if(globalFunctions::get_from_get('existed'))
     	{
-    		$this->displayWaring($filename);
+    		$this->displayWaring(globalFunctions::get_filename_from_path($filename));
     	}
 		$handle = fopen($filename, "r");
 		$this->html .= '<table id="table1">';
 		//Display heading
-		$this->html .= "<caption>$filename</caption>";
+		$this->html .= '<caption>'.globalFunctions::get_filename_from_path($filename).'</caption>';
     	$csvContents = fgetcsv($handle);
     	$this->html .= '<tr>';
     	foreach ($csvContents as $headercolumn)
