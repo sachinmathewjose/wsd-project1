@@ -5,6 +5,7 @@ abstract class page
 	protected $html;
 	public function __construct()
 	{
+		//adiing html headers
 		$this->html .= '<html>';
 		$this->html .= '<head>';
 		$this->html .= '<title>My Project 1</title>';

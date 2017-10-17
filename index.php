@@ -3,7 +3,7 @@
 ini_set('display_errors','On');
 error_reporting(E_ALL);
 
-//Class to load class
+//Class to load classes
 Class Manage 
 {
 	public static function autoload($class)
@@ -28,7 +28,6 @@ class main
 			$requested_page = $var;
 		}
 		$page = new $requested_page;
-		// Calling get function from requested page
 		if($_SERVER['REQUEST_METHOD'] == 'GET')
 		{
             $page->get();

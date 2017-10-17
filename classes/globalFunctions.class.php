@@ -29,6 +29,12 @@ class globalFunctions
 	{
 		return basename($path);
 	}
+
+	static public function fileExisted($target_file)
+    {
+        return file_exists($target_file);
+    }
+
 }
 
 ?>

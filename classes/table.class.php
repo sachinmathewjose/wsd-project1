@@ -4,10 +4,14 @@ class table extends page
 
     public function get()
     {
-        if (isset($_GET['file']))
-		{
-			$this->readcsv($_GET['file']);
-		}
+        if ($var = globalFunctions::get_from_REQUEST('file'))
+        {
+            $this->readcsv($var);
+        }
+    }
+    public function post()
+    {
+            //post function here
     }
 
     public function displayWaring($filename)
@@ -49,12 +53,6 @@ class table extends page
 		$this->html .= '</table>';
 		fclose($handle);
 	}
-
-    public function post()
-    {
-        $this->html .= '<h1>Test page post</h1>';
-    }
-
 }
 
 ?>

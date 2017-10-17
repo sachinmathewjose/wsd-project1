@@ -1,4 +1,5 @@
 <?php 
+//class for showing error of any kind
 class errorReport extends page
 {
 

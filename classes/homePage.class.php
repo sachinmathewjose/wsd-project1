@@ -19,10 +19,10 @@ class homePage extends page
     public function post()
     {
         $target_dir = "uploads/";
-        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $target_file = $target_dir . globalFunctions::get_filename_from_path($_FILES["fileToUpload"]["name"]);
         $fileType = pathinfo($target_file,PATHINFO_EXTENSION);
         $existed = '';
-        if ($this->fileExisted($target_file))
+        if (globalFunctions::fileExisted($target_file))
         {
             $existed = '&existed=TRUE';
         }
@@ -45,12 +45,6 @@ class homePage extends page
             }
         }     
     }
-
-    public function fileExisted($target_file)
-    {
-        return file_exists($target_file);
-    }
-
 }
 
 ?>
