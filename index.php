@@ -14,7 +14,6 @@ Class Manage
 
 //register auto load function
 spl_autoload_register(array('Manage','autoload'));
-
 $obj = new main();
 
 //main class

@@ -8,7 +8,8 @@ abstract class page
 		$this->html .= '<html>';
 		$this->html .= '<head>';
 		$this->html .= '<title>My Project 1</title>';
-        $this->html .= '<link rel="stylesheet" type="text/css" href="styles/style.css">';
+		$style = 'style'.get_called_class();
+        $this->html .= '<link rel="stylesheet" type="text/css" href="styles/'.$style.'.css">';
         $this->html .= '</head>';
         $this->html .= '<body>';
 	}
