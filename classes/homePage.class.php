@@ -18,8 +18,8 @@ class homePage extends page
 
     public function post()
     {
-        $target_dir = "uploads/";
-        $target_file = $target_dir . globalFunctions::get_filename_from_path($_FILES["fileToUpload"]["name"]);
+        $target_filename = globalFunctions::get_filename_from_path($_FILES["fileToUpload"]["name"]);
+        $target_file = "uploads/" . stringFunction::convert_lower_rmspace($target_filename);
         $fileType = pathinfo($target_file,PATHINFO_EXTENSION);
         $existed = '';
         if (globalFunctions::fileExisted($target_file))

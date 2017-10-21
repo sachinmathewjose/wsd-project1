@@ -48,7 +48,7 @@ class table extends page
 		    {
 		        $this->html .= "<td>$column</td>";
 		    }
-    	$this->html .= '</tr>';
+    	    $this->html .= '</tr>';
 		}
 		$this->html .= '</table>';
 		fclose($handle);

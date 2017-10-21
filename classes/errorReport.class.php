@@ -23,7 +23,7 @@ class errorReport extends page
     }
     public function post()
     {
-        $this->html .= '<h1>error post</h1>';
+        //$this->html .= '<h1>error post</h1>';
     }
 }
 
